@@ -1,0 +1,4 @@
+repository "AFK_Zaroprojekt 2026-05-17_16-36-07/AFK_Zaroprojekt@7972515857399@cloud"
+  path "/"
+    br "/main"
+    co "/main"
