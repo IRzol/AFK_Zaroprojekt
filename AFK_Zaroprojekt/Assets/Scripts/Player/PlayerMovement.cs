@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     public bool isGrounded;
 
     private Animator animator;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -30,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         SetAnimation(moveInput);
+
+        if (moveInput > 0)
+            sr.flipX = false;
+
+        if (moveInput < 0)
+            sr.flipX = true;
     }
 
     private void FixedUpdate()
