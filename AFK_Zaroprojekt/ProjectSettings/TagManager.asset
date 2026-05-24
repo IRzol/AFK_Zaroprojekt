@@ -44,8 +44,11 @@ TagManager:
   - name: Wall
     uniqueID: 2639867581
     locked: 0
-  - name: New Layer 2
+  - name: BackGround
     uniqueID: 3901190257
+    locked: 0
+  - name: ObstWall
+    uniqueID: 4260526323
     locked: 0
   m_RenderingLayers:
   - Default
