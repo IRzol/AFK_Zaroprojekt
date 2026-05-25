@@ -50,6 +50,9 @@ TagManager:
   - name: ObstWall
     uniqueID: 4260526323
     locked: 0
+  - name: Door
+    uniqueID: 3432949553
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
