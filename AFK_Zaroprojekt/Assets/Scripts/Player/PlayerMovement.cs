@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput < 0)
             sr.flipX = true;
 
-        Flip();
     }
 
     private void FixedUpdate()
@@ -72,15 +71,5 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    void Flip()
-    {
-        Vector3 scale = transform.localScale;
-
-        if (Input.GetAxis("Horizontal") > 0)
-            scale.x = Mathf.Abs(scale.x); // jobbra néz
-        else if (Input.GetAxis("Horizontal") < 0)
-            scale.x = -Mathf.Abs(scale.x); // balra néz
-
-        transform.localScale = scale;
-    }
+   
 }
