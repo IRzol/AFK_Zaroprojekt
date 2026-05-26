@@ -15,10 +15,9 @@ public class PlayerFegyverController : MonoBehaviour
         felvetFegyver.transform.SetParent(fegyverTartoPont);
 
         Rigidbody2D rb = felvetFegyver.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Kinematic;
-        }
+        if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
+
+        Collider2D col = felvetFegyver.GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
     }
 }
