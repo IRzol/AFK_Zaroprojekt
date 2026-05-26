@@ -9,7 +9,16 @@ public class PlayerFegyverController : MonoBehaviour
     {
         if (felvetFegyver != null) Destroy(felvetFegyver);
 
-        felvetFegyver = Instantiate(fegyverPrefab, fegyverTartoPont.position, fegyverTartoPont.rotation);
+        felvetFegyver = Instantiate(fegyverPrefab,
+                        fegyverTartoPont.position,
+                        fegyverTartoPont.rotation);
         felvetFegyver.transform.SetParent(fegyverTartoPont);
+
+        Rigidbody2D rb = felvetFegyver.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
     }
 }
