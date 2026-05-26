@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Transform fegyverTartoPont;
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public Transform groundCheck;
@@ -34,10 +35,16 @@ public class PlayerMovement : MonoBehaviour
         SetAnimation(moveInput);
 
         if (moveInput > 0)
+        {
             sr.flipX = false;
+            fegyverTartoPont.localScale = new Vector3(1, 1, 1);
+        }
 
         if (moveInput < 0)
+        {
             sr.flipX = true;
+            fegyverTartoPont.localScale = new Vector3(-1, 1, 1);
+        }
 
     }
 
