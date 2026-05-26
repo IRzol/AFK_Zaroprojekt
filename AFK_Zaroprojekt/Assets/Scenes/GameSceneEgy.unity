@@ -1534,7 +1534,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: -0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1822639339}
@@ -1682,11 +1682,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9140325128145775161, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9140325128145775161, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
       propertyPath: m_SortingLayerID
-      value: -862017743
+      value: -34440973
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4705,7 +4705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e981b2f57858ade42899a9c747ccb3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FegyverPickup
-  fegyverPrefab: {fileID: 8340696220571306052, guid: 3415dc10589cbe549a85bb5d9e93717f, type: 3}
+  fegyverPrefab: {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
