@@ -7,17 +7,26 @@ public class Door : MonoBehaviour
     public Animator animator;
     public float interactRange = 2f;
     public Transform player;
+    public GameObject eButton; 
     private bool opened = false;
 
     void Update()
     {
-        if (opened) return;
+        if (opened)
+        {
+            eButton.SetActive(false);
+            return;
+        }
 
         float distance = Vector2.Distance(transform.position, player.position);
-        if (distance <= interactRange && Input.GetKeyDown(KeyCode.E))
+        bool inRange = distance <= interactRange;
+
+        eButton.SetActive(inRange);
+
+        if (inRange && Input.GetKeyDown(KeyCode.E))
         {
             doorHitb.GetComponent<TilemapCollider2D>().enabled = false;
-            animator.SetBool("IsOpen", true); //
+            animator.SetBool("IsOpen", true);
             opened = true;
         }
     }
