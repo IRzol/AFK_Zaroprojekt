@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-        float direction = transform.localScale.x > 0 ? 1f : -1f;
+        float direction = GetComponent<SpriteRenderer>().flipX ? -1f : 1f;
         rb.linearVelocity = Vector2.right * direction * bulletSpeed;
         Destroy(bullet, 3f);
     }
