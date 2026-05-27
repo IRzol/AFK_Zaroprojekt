@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing;
     private float dashingPower = 20f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 0.5f;
+    private float dashingCooldown = 0.7f;
 
 
     private Rigidbody2D rb;
