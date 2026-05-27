@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,9 +10,17 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 20f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 0.5f;
+
+
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     public bool isGrounded;
+    [SerializeField] private TrailRenderer tr;
 
     private Animator animator;
 
@@ -24,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (isDashing)
+        {
+            return; 
+        }
+
         float moveInput = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
@@ -46,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
             fegyverTartoPont.localScale = new Vector3(-1, 1, 1);
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash) 
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     private void FixedUpdate()
@@ -78,5 +96,23 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-   
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        float direction = sr.flipX ? -1f : 1f;
+        rb.linearVelocity = new Vector2(direction * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        rb.linearVelocity = Vector2.zero;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+
 }
