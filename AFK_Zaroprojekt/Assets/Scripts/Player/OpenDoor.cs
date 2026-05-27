@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Door : MonoBehaviour
+public class OpenDoor : MonoBehaviour
 {
     public GameObject doorHitb;
     public Animator animator;
@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     public Transform player;
     public GameObject eButton; 
     private bool opened = false;
+    public Transform interactPoint;
 
     void Update()
     {
@@ -18,8 +19,8 @@ public class Door : MonoBehaviour
             return;
         }
 
-        float distance = Vector2.Distance(transform.position, player.position);
-        bool inRange = distance <= interactRange;
+        float distance1 = Vector2.Distance(interactPoint.position, player.position);
+        bool inRange = distance1 <= interactRange;
 
         eButton.SetActive(inRange);
 

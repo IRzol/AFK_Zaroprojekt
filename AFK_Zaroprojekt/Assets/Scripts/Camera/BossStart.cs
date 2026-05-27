@@ -7,33 +7,34 @@ public class BossStart : MonoBehaviour
     public CinemachineCamera staticCamBossArena;
     public CinemachineCamera followCam;
     private bool triggered = false;
-    public float interactRange = 2f;
+    public float interactRange2 = 2f;
     public Transform player;
-    public GameObject eButton;
+    public GameObject eButton2;
     public GameObject skull;
     public GameObject doorHitbox;
-    public Animator animator;
+    public Animator doorAnimator;
+    public Animator skullAnimator;
     void Update()
     {
         if (triggered)
         {
-            eButton.SetActive(false);
+            eButton2.SetActive(false);
             return;
         }
 
-        float distance = Vector2.Distance(transform.position, player.position);
-        bool inRange = distance <= interactRange;
+        float distance2 = Vector2.Distance(transform.position, player.position);
+        bool inRange2 = distance2 <= interactRange2;
 
-        eButton.SetActive(inRange);
+        eButton2.SetActive(inRange2);
 
-        if (inRange && Input.GetKeyDown(KeyCode.E))
+        if (inRange2 && Input.GetKeyDown(KeyCode.E))
         {
+            doorHitbox.GetComponent<TilemapCollider2D>().enabled = true;
+            doorAnimator.SetBool("IsOpen", false);
+            skullAnimator.SetBool("isPressed", true);
+            triggered = true;
             followCam.Priority = 0;
             staticCamBossArena.Priority = 10;
-            triggered = true;
-            skull.GetComponent<Renderer>().enabled = false;
-            doorHitbox.GetComponent<TilemapCollider2D>().enabled = true;
-            animator.SetBool("IsOpen", false);
         }
     }
     
