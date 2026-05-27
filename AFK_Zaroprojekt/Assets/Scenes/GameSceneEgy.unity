@@ -158,7 +158,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   fegyverTartoPont: {fileID: 518260817}
   moveSpeed: 5
-  jumpForce: 10
+  jumpForce: 12
   groundCheck: {fileID: 458062519}
   groundCheckRadius: 0.2
   groundLayer:
@@ -518,7 +518,8 @@ Transform:
   m_LocalPosition: {x: 27, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1403180980}
   m_Father: {fileID: 503868722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &123536729
@@ -560,7 +561,7 @@ MonoBehaviour:
   interactRange: 2
   player: {fileID: 96077699}
   eButton: {fileID: 1576537289}
-  interactPoint: {fileID: 0}
+  interactPoint: {fileID: 1403180980}
 --- !u!212 &123536731
 SpriteRenderer:
   serializedVersion: 2
@@ -6079,7 +6080,7 @@ Transform:
   m_GameObject: {fileID: 1078286299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.5, y: 1.3, z: -1}
+  m_LocalPosition: {x: -1.52, y: -1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7248,6 +7249,37 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &1403180979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403180980}
+  m_Layer: 0
+  m_Name: InteractPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1403180980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403180979}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 123536728}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1576537289
 GameObject:
   m_ObjectHideFlags: 0
@@ -8303,7 +8335,7 @@ MonoBehaviour:
   followCam: {fileID: 1704490118}
   interactRange2: 2
   player: {fileID: 96077699}
-  eButton2: {fileID: 477087482}
+  eButtonSkull: {fileID: 477087482}
   skull: {fileID: 2113994446}
   doorHitbox: {fileID: 950144907}
   doorAnimator: {fileID: 1223839220}

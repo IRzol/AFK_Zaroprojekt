@@ -9,7 +9,7 @@ public class BossStart : MonoBehaviour
     private bool triggered = false;
     public float interactRange2 = 2f;
     public Transform player;
-    public GameObject eButton2;
+    public GameObject eButtonSkull;
     public GameObject skull;
     public GameObject doorHitbox;
     public Animator doorAnimator;
@@ -18,14 +18,14 @@ public class BossStart : MonoBehaviour
     {
         if (triggered)
         {
-            eButton2.SetActive(false);
+            eButtonSkull.SetActive(false);
             return;
         }
 
         float distance2 = Vector2.Distance(transform.position, player.position);
         bool inRange2 = distance2 <= interactRange2;
 
-        eButton2.SetActive(inRange2);
+        eButtonSkull.SetActive(inRange2);
 
         if (inRange2 && Input.GetKeyDown(KeyCode.E))
         {

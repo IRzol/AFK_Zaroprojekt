@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Transform fegyverTartoPont;
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 13f;
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
