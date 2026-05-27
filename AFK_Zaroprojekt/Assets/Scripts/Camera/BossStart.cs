@@ -2,7 +2,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class CameraBossArena : MonoBehaviour
+public class BossStart : MonoBehaviour
 {
     public CinemachineCamera staticCamBossArena;
     public CinemachineCamera followCam;
@@ -10,7 +10,9 @@ public class CameraBossArena : MonoBehaviour
     public float interactRange = 2f;
     public Transform player;
     public GameObject eButton;
-
+    public GameObject skull;
+    public GameObject doorHitbox;
+    public Animator animator;
     void Update()
     {
         if (triggered)
@@ -29,6 +31,9 @@ public class CameraBossArena : MonoBehaviour
             followCam.Priority = 0;
             staticCamBossArena.Priority = 10;
             triggered = true;
+            skull.GetComponent<Renderer>().enabled = false;
+            doorHitbox.GetComponent<TilemapCollider2D>().enabled = true;
+            animator.SetBool("IsOpen", false);
         }
     }
     
