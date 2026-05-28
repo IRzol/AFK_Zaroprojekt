@@ -15,9 +15,12 @@ public class BossStart : MonoBehaviour
     public Animator doorAnimator;
     public Animator skullAnimator;
     public GameObject skullBoss;
+    public GameObject sahurBoss;
     private void Start()
     {
         skullBoss.GetComponent<SpriteRenderer>().enabled = false;
+        sahurBoss.GetComponent<SpriteRenderer>().enabled = false;
+
     }
     void Update()
     {
@@ -42,6 +45,7 @@ public class BossStart : MonoBehaviour
             followCam.Priority = 0;
             staticCamBossArena.Priority = 10;
             skullBoss.GetComponent<SpriteRenderer>().enabled = true;
+            sahurBoss.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
     
