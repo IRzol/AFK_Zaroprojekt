@@ -7,6 +7,8 @@ public class SkullBossAttack : MonoBehaviour
 
     public float slamSpeed = 20f;
     public float riseSpeed = 8f;
+    public float sideSpeed = 3f;
+    public float timeForSlam = 1f;
     public bool isAlive = true;
     public Transform player;
     private Vector2 startPosition;
@@ -22,7 +24,7 @@ public class SkullBossAttack : MonoBehaviour
     {
         while (isAlive)
         {
-            yield return SlamAttack();
+            yield return ChooseAttack();
             yield return new WaitForSeconds(1f);
         }
     }
@@ -38,12 +40,12 @@ public class SkullBossAttack : MonoBehaviour
             while (Vector2.Distance(playerTarget, transform.position) > 0.05f)
             {
                 playerTarget = new Vector2(player.position.x, transform.position.y);
-                transform.position = Vector2.MoveTowards(transform.position, playerTarget, 3f * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, playerTarget, sideSpeed * Time.deltaTime);
                 yield return null;
             }
 
             animator.Play("Skull_OpenMouth");
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(timeForSlam);
 
             //Lecsapódik
             startPosition = transform.position;
@@ -53,7 +55,7 @@ public class SkullBossAttack : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, slamTargetPos, slamSpeed * Time.deltaTime);
                 yield return null;
             }
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.1f);
 
             //Felemelkedik az eredeti magasságba
             while (Vector2.Distance(transform.position, startPosition) > 0.05f)
@@ -65,7 +67,46 @@ public class SkullBossAttack : MonoBehaviour
             if (i == 0)
             {
                 isAlive = false;
-            } 
+            }
+            sideSpeed += 1;
+            timeForSlam -= 0.1f;
+
         }
+    }
+    private IEnumerator ChooseAttack()
+    {
+        int randomAttack = Random.Range(0, 2); // 0 vagy 1
+
+        //if (randomAttack == 0)
+        //{
+        //    yield return SlamAttack();
+        //}
+        //else
+        //{
+            yield return TeethAttack();
+        //}
+    }
+
+    private IEnumerator TeethAttack()
+    {
+        bool goRight = Random.value > 0.5f;
+
+        Vector2 leftShootPos = new Vector2(14.3f, transform.position.y);
+        Vector2 rightShootPos = new Vector2(24.7f, transform.position.y);
+
+        Vector2 target = goRight ? rightShootPos : leftShootPos;
+
+        while (Vector2.Distance(transform.position, target) > 0.05f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, (sideSpeed+1) * Time.deltaTime);
+            yield return null;
+        }
+
+        //if (target == rightShootPos) 
+        //{
+
+        //}
+
+        isAlive = false;
     }
 }
