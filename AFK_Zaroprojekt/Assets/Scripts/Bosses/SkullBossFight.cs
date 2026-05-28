@@ -22,7 +22,7 @@ public class SkullBossFight : MonoBehaviour
 
     private void Start()
     {
-        skullBoss.GetComponent<SpriteRenderer>().enabled = false;
+        skullBoss.SetActive(false);
         sahurBoss.GetComponent<SpriteRenderer>().enabled = false;
 
     }
@@ -60,6 +60,7 @@ public class SkullBossFight : MonoBehaviour
 
     private IEnumerator BossStartAnimacio()
     {
+        skullBoss.SetActive(true);
         yield return new WaitForSeconds(0.8f);
         skullBoss.GetComponent<SpriteRenderer>().enabled = true;
         bossSkullAnimator.SetBool("isSpawning", true);
@@ -68,6 +69,6 @@ public class SkullBossFight : MonoBehaviour
         yield return new WaitForSeconds(3f);
         bossSkullAnimator.SetBool("isLaughing", false);
         bossSkullAnimator.SetBool("isSpawning", false);
-        
+        skullBoss.GetComponent<SkullBossAttack>().enabled = true;
     }
 }
