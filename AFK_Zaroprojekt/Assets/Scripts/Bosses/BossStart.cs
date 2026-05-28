@@ -10,15 +10,21 @@ public class BossStart : MonoBehaviour
     public float interactRange2 = 2f;
     public Transform player;
     public GameObject eButtonSkull;
-    public GameObject skull;
+    public GameObject lilskull;
     public GameObject doorHitbox;
     public Animator doorAnimator;
     public Animator skullAnimator;
+    public GameObject skullBoss;
+    private void Start()
+    {
+        skullBoss.GetComponent<SpriteRenderer>().enabled = false;
+    }
     void Update()
     {
         if (triggered)
         {
             eButtonSkull.SetActive(false);
+
             return;
         }
 
@@ -35,6 +41,7 @@ public class BossStart : MonoBehaviour
             triggered = true;
             followCam.Priority = 0;
             staticCamBossArena.Priority = 10;
+            skullBoss.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
     

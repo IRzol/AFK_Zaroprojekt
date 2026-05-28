@@ -850,7 +850,7 @@ Transform:
   m_GameObject: {fileID: 338840309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.31, y: 1.68, z: 0}
+  m_LocalPosition: {x: 19.22, y: 2.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8571,10 +8571,11 @@ MonoBehaviour:
   interactRange2: 2
   player: {fileID: 96077699}
   eButtonSkull: {fileID: 477087482}
-  skull: {fileID: 2113994446}
+  lilskull: {fileID: 0}
   doorHitbox: {fileID: 950144907}
   doorAnimator: {fileID: 1223839220}
   skullAnimator: {fileID: 2113994451}
+  skullBoss: {fileID: 338840309}
 --- !u!61 &2113994448
 BoxCollider2D:
   m_ObjectHideFlags: 0
