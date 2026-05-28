@@ -2299,8 +2299,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1774213943
-  m_SortingLayer: 5
+  m_SortingLayerID: -862017743
+  m_SortingLayer: 4
   m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3539976375719355533, guid: 1f899d6bd019e1a44a70e961577f2bd0, type: 3}
@@ -2322,7 +2322,7 @@ Transform:
   m_GameObject: {fileID: 338840309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.31, y: 1.68, z: 0}
+  m_LocalPosition: {x: 19.22, y: 2.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5182,11 +5182,11 @@ Transform:
   m_Children:
   - {fileID: 1924483445}
   - {fileID: 503868722}
-  - {fileID: 1277631437}
   - {fileID: 874249671}
   - {fileID: 1052925867}
   - {fileID: 950144908}
   - {fileID: 943184267}
+  - {fileID: 1277631437}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799942518
@@ -13321,10 +13321,11 @@ MonoBehaviour:
   interactRange2: 2
   player: {fileID: 96077699}
   eButtonSkull: {fileID: 477087482}
-  skull: {fileID: 2113994446}
+  lilskull: {fileID: 0}
   doorHitbox: {fileID: 950144907}
   doorAnimator: {fileID: 1223839220}
   skullAnimator: {fileID: 2113994451}
+  skullBoss: {fileID: 338840309}
 --- !u!61 &2113994448
 BoxCollider2D:
   m_ObjectHideFlags: 0
