@@ -827,8 +827,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1774213943
-  m_SortingLayer: 5
+  m_SortingLayerID: -862017743
+  m_SortingLayer: 4
   m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3539976375719355533, guid: 1f899d6bd019e1a44a70e961577f2bd0, type: 3}
@@ -3470,11 +3470,11 @@ Transform:
   m_Children:
   - {fileID: 1924483445}
   - {fileID: 503868722}
-  - {fileID: 1277631437}
   - {fileID: 874249671}
   - {fileID: 1052925867}
   - {fileID: 950144908}
   - {fileID: 943184267}
+  - {fileID: 1277631437}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874249670
