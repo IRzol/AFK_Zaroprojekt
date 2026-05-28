@@ -113,6 +113,7 @@ public class SkullBossAttack : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 180f * Time.deltaTime);
             yield return null;
         }
+        animator.Play("Skull_OpenMouth");
 
         //transform.rotation = Quaternion.identity;
 
