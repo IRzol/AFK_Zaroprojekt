@@ -8,7 +8,7 @@ public class SkullBossFight : MonoBehaviour
     public CinemachineCamera staticCamBossArena;
     public CinemachineCamera followCam;
     private bool triggered = false;
-    public float interactRange2 = 2f;
+    public float interactRange2 = 1.5f;
     public Transform player;
     public GameObject eButtonSkull;
     public GameObject lilskull;
@@ -18,6 +18,8 @@ public class SkullBossFight : MonoBehaviour
     public Animator bossSkullAnimator;
     public GameObject skullBoss;
     public GameObject sahurBoss;
+    public Sprite SkullBoss_0;
+
     private void Start()
     {
         skullBoss.GetComponent<SpriteRenderer>().enabled = false;
@@ -60,9 +62,12 @@ public class SkullBossFight : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         skullBoss.GetComponent<SpriteRenderer>().enabled = true;
+        bossSkullAnimator.SetBool("isSpawning", true);
         yield return new WaitForSeconds(1f);
         bossSkullAnimator.SetBool("isLaughing", true);
         yield return new WaitForSeconds(3f);
         bossSkullAnimator.SetBool("isLaughing", false);
+        bossSkullAnimator.SetBool("isSpawning", false);
+        
     }
 }
