@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SkullBossAttack : MonoBehaviour
 {
@@ -83,7 +84,7 @@ public class SkullBossAttack : MonoBehaviour
         //}
         //else
         //{
-            yield return TeethAttack();
+        yield return TeethAttack();
         //}
     }
 
@@ -102,10 +103,18 @@ public class SkullBossAttack : MonoBehaviour
             yield return null;
         }
 
-        //if (target == rightShootPos) 
-        //{
+        Vector2 direction = player.position - transform.position;
 
-        //}
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        while (transform.rotation.z != angle + 90f)
+        {
+            
+            Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle + 90f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 180f * Time.deltaTime);
+            yield return null;
+        }
+
+        //transform.rotation = Quaternion.identity;
 
         isAlive = false;
     }
