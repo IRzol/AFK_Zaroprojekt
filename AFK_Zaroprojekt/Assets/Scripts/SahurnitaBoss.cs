@@ -170,14 +170,14 @@ public class SahurnitaBoss : MonoBehaviour
         float target = patrolOrigin.x + patrolDir * patrolDistance;
         float move   = patrolDir * patrolSpeed;
 
-        rb.velocity = new Vector2(move, rb.velocity.y);
+        rb.linearVelocity = new Vector2(move, rb.linearVelocity.y);
 
         // Flip at patrol edges
         if (Mathf.Abs(transform.position.x - patrolOrigin.x) >= patrolDistance)
             patrolDir *= -1;
 
         FaceDirection(patrolDir);
-        SetAnim("IsWalking", Mathf.Abs(rb.velocity.x) > 0.1f);
+        SetAnim("IsWalking", Mathf.Abs(rb.linearVelocity.x) > 0.1f);
     }
 
     // ─────────────────────────── Charge Attack ───────────────────────────
@@ -206,12 +206,12 @@ public class SahurnitaBoss : MonoBehaviour
 
         while (elapsed < chargeTime)
         {
-            rb.velocity = new Vector2(dir * chargeSpeed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(dir * chargeSpeed, rb.linearVelocity.y);
             elapsed += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
 
-        rb.velocity = new Vector2(0, rb.velocity.y);
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         SetAnim("IsCharging", false);
 
         state    = BossState.Patrolling;
@@ -226,7 +226,7 @@ public class SahurnitaBoss : MonoBehaviour
         state    = BossState.Slamming;
 
         SetAnim("IsSlam", true);
-        rb.velocity = new Vector2(0, rb.velocity.y);
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
         yield return new WaitForSeconds(0.3f);   // slam windup
 
@@ -254,7 +254,7 @@ public class SahurnitaBoss : MonoBehaviour
         state    = BossState.BurstAttack;
 
         SetAnim("IsBurst", true);
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
         if (projectilePrefab != null)
         {
@@ -268,7 +268,7 @@ public class SahurnitaBoss : MonoBehaviour
 
                 GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
                 Rigidbody2D projRb = proj.GetComponent<Rigidbody2D>();
-                if (projRb != null) projRb.velocity = dir * projectileSpeed;
+                if (projRb != null) projRb.linearVelocity = dir * projectileSpeed;
 
                 yield return new WaitForSeconds(0.08f);
             }
@@ -312,7 +312,7 @@ public class SahurnitaBoss : MonoBehaviour
     void Die()
     {
         state         = BossState.Dead;
-        rb.velocity   = Vector2.zero;
+        rb.linearVelocity   = Vector2.zero;
         isActing      = false;
 
         SetAnim("IsDead", true);
