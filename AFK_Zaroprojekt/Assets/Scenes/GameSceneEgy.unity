@@ -4125,8 +4125,8 @@ Tilemap:
   - first: {x: -1, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6214,7 +6214,7 @@ Tilemap:
     m_RefCount: 0
     m_Data: {fileID: 11400000, guid: 1b21d81eb1df9fc4ab1f72849ab82f46, type: 2}
   - serializedVersion: 2
-    m_RefCount: 3
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 64c4000419e19cd458e94d03300aeb49, type: 2}
   - serializedVersion: 2
     m_RefCount: 0
@@ -6223,7 +6223,7 @@ Tilemap:
     m_RefCount: 0
     m_Data: {fileID: 11400000, guid: 9a634cd0fd1be2e438da966c63dc6b7d, type: 2}
   - serializedVersion: 2
-    m_RefCount: 2
+    m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 3f6083087527b094f807068f67b92579, type: 2}
   m_TileSpriteArray:
   - serializedVersion: 2
@@ -6236,7 +6236,7 @@ Tilemap:
     m_RefCount: 0
     m_Data: {fileID: -4889456889850746776, guid: 4d11699f205505a4b908abf28b4e09f2, type: 3}
   - serializedVersion: 2
-    m_RefCount: 3
+    m_RefCount: 2
     m_Data: {fileID: -4217728943927191676, guid: 5a52169e1642eaf44a1e57a70ab47efc, type: 3}
   - serializedVersion: 2
     m_RefCount: 0
@@ -6245,7 +6245,7 @@ Tilemap:
     m_RefCount: 0
     m_Data: {fileID: 6251999246663601592, guid: af04cd3ec4e0b13489ad0b4ea2631e37, type: 3}
   - serializedVersion: 2
-    m_RefCount: 2
+    m_RefCount: 3
     m_Data: {fileID: -3521218365567619923, guid: bbcb184a6d451b94ebc2bd8c7a281ba1, type: 3}
   m_TileMatrixArray:
   - serializedVersion: 2
@@ -13350,7 +13350,7 @@ Transform:
   m_GameObject: {fileID: 1305109572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.44, y: 1.06, z: 0}
+  m_LocalPosition: {x: 46.16, y: 1.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16625,10 +16625,11 @@ MonoBehaviour:
   interactRange2: 2
   player: {fileID: 96077699}
   eButtonSkull: {fileID: 477087482}
-  lilskull: {fileID: 0}
+  lilskull: {fileID: 2113994446}
   doorHitbox: {fileID: 950144907}
   doorAnimator: {fileID: 1223839220}
-  skullAnimator: {fileID: 2113994451}
+  lilSkullAnimator: {fileID: 2113994451}
+  bossSkullAnimator: {fileID: 338840310}
   skullBoss: {fileID: 338840309}
   sahurBoss: {fileID: 1305109572}
 --- !u!61 &2113994448
