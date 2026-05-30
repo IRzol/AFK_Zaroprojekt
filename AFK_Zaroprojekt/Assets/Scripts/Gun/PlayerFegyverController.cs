@@ -19,5 +19,7 @@ public class PlayerFegyverController : MonoBehaviour
 
         Collider2D col = felvetFegyver.GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
+
+        GetComponent<Shooting>().hasGun = true;
     }
 }

@@ -5,10 +5,11 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 20f;
+    public bool hasGun = false;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && hasGun)
         {
             Shoot();
         }
