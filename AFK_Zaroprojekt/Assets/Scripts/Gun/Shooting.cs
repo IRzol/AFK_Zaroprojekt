@@ -21,9 +21,11 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePos - firePoint.position).normalized;
+        mousePos.z = firePoint.position.z;
+        Vector2 direction = ((Vector2)mousePos - (Vector2)firePoint.position).normalized;
         rb.linearVelocity = direction * bulletSpeed;
 
         Destroy(bullet, 3f);
+        hasGun = false;
     }
 }
