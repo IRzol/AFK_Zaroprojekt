@@ -517,6 +517,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8340696220571306052, guid: 3415dc10589cbe549a85bb5d9e93717f, type: 3}
   firePoint: {fileID: 1822639339}
   bulletSpeed: 20
+  hasGun: 0
 --- !u!96 &96077706
 TrailRenderer:
   serializedVersion: 4
@@ -6506,7 +6507,7 @@ Transform:
   m_GameObject: {fileID: 518260816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.047, y: -0.156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11821,7 +11822,7 @@ Transform:
   m_GameObject: {fileID: 1078286299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.5, y: 1.3, z: -1}
+  m_LocalPosition: {x: -1.52, y: -1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16097,7 +16098,7 @@ Transform:
   m_GameObject: {fileID: 1822639338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.456, y: -0.007, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
