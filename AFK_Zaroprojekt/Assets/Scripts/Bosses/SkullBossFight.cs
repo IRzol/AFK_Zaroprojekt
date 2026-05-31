@@ -20,7 +20,7 @@ public class SkullBossFight : MonoBehaviour
     public GameObject sahurBoss;
     public Sprite SkullBoss_0;
     public GameObject bossHealthUI;
-
+ 
     private void Start()
     {
         skullBoss.SetActive(false);

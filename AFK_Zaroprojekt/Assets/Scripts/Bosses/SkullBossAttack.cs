@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 public class SkullBossAttack : MonoBehaviour
 {
     public Animator animator;
+    public Animator animatorIcon;
 
     public float slamSpeed = 20f;
     public float riseSpeed = 8f;
@@ -19,6 +20,10 @@ public class SkullBossAttack : MonoBehaviour
     private void Start()
     {
         startPosition = transform.position;
+
+        Debug.Log(animator.runtimeAnimatorController.name);
+        Debug.Log(animatorIcon.runtimeAnimatorController.name);
+
         StartCoroutine(BossLoop());
     }
 
@@ -47,6 +52,7 @@ public class SkullBossAttack : MonoBehaviour
             }
             Vector2 riseUpTarget = new Vector2(transform.position.x, startPosition.y); ;
             animator.Play("Skull_OpenMouth");
+            animatorIcon.Play("Skull_OpenMouthIcon");
             yield return new WaitForSeconds(timeForSlam);
 
             //Lecsapódik
@@ -63,6 +69,7 @@ public class SkullBossAttack : MonoBehaviour
             while (Vector2.Distance(transform.position, riseUpTarget) > 0.05f)
             {
                 animator.Play("Skull_CloseMouth");
+                animatorIcon.Play("Skull_CloseMouthIcon");
                 transform.position = Vector2.MoveTowards(transform.position,riseUpTarget,riseSpeed * Time.deltaTime);
                 yield return null;
             } 
@@ -117,10 +124,12 @@ public class SkullBossAttack : MonoBehaviour
         }
 
         animator.Play("Skull_OpenMouth");
+        animatorIcon.Play("Skull_OpenMouthIcon");
         yield return new WaitForSeconds(1f);
         ShootTeeth();
         yield return new WaitForSeconds(1f);
         animator.Play("Skull_CloseMouth");
+        animatorIcon.Play("Skull_CloseMouthIcon");
         yield return new WaitForSeconds(1f);
 
         Quaternion resetRotation = Quaternion.identity;
