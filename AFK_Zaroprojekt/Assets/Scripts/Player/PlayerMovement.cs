@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,12 +27,17 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     private SpriteRenderer spriteRenderer;
+
+    public float maxHealth;
+    public Image healthBar;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        maxHealth = health;
     }
 
     void Update()
@@ -67,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
     }
 
     private void FixedUpdate()
@@ -125,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
             health -= 16.666666666666666666666666666667f;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce-2f);
             StartCoroutine(BlinkRed());
-            if (health <= 0f)
+            if (health <= 2f)
             {
                 Die();
             }
