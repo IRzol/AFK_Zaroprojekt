@@ -21,5 +21,15 @@ public class PlayerFegyverController : MonoBehaviour
         if (col != null) col.enabled = false;
 
         GetComponent<Shooting>().hasGun = true;
+
+        Transform weaponFirePoint = felvetFegyver.transform.Find("FirePoint");
+        if (weaponFirePoint != null)
+        {
+            GetComponent<Shooting>().firePoint = weaponFirePoint;
+        }
+        FegyverPickup fp = fegyverPrefab.GetComponent<FegyverPickup>();
+        if (fp != null && fp.bulletPrefab != null)
+            GetComponent<Shooting>().bulletPrefab = fp.bulletPrefab;
     }
+
 }
