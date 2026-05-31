@@ -3,6 +3,7 @@ using UnityEngine;
 public class FegyverPickup : MonoBehaviour
 {
     public GameObject fegyverPrefab;
+    public GameObject bulletPrefab;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
