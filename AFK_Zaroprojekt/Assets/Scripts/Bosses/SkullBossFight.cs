@@ -19,6 +19,7 @@ public class SkullBossFight : MonoBehaviour
     public GameObject skullBoss;
     public GameObject sahurBoss;
     public Sprite SkullBoss_0;
+    public GameObject bossHealthUI;
 
     private void Start()
     {
@@ -66,6 +67,7 @@ public class SkullBossFight : MonoBehaviour
         bossSkullAnimator.SetBool("isSpawning", true);
         yield return new WaitForSeconds(1f);
         bossSkullAnimator.SetBool("isLaughing", true);
+        bossHealthUI.SetActive(true);
         yield return new WaitForSeconds(3f);
         bossSkullAnimator.SetBool("isLaughing", false);
         bossSkullAnimator.SetBool("isSpawning", false);

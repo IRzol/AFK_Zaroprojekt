@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxHealth;
     public Image healthBar;
     public Image damageBar;
-    private float damaageBarTimer;
+    private float damageBarTimer;
     public float maxStamina;
     public Image staminaBar;
     public Image staminaDownBar;
@@ -111,9 +111,9 @@ public class PlayerMovement : MonoBehaviour
             healthBar.fillAmount = health / maxHealth;
 
             //Várakozás sebzõdés után
-            if (damaageBarTimer > 0)
+            if (damageBarTimer > 0)
             {
-                damaageBarTimer -= Time.deltaTime;
+                damageBarTimer -= Time.deltaTime;
             }
             else
             {
@@ -221,7 +221,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Damage"))
         {
             health -= 16.666666666666666666666666666667f;
-            damaageBarTimer = 0.5f;
+            damageBarTimer = 0.5f;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce-2f);
             StartCoroutine(BlinkRed());
             if (health <= 2f)
