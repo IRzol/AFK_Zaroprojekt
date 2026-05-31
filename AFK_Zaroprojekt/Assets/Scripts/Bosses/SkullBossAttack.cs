@@ -8,7 +8,7 @@ public class SkullBossAttack : MonoBehaviour
 
     public float slamSpeed = 20f;
     public float riseSpeed = 8f;
-    public float sideSpeed = 4f;
+    public float sideSpeed = 3.5f;
     public float timeForSlam = 1f;
     public bool isAlive = true;
     public Transform player;
@@ -35,17 +35,17 @@ public class SkullBossAttack : MonoBehaviour
     {
         for (int i = 2; i >= 0; i--)
         {
-            Vector2 slamTargetPos = new Vector2(transform.position.x, -1.5f);
+            Vector2 slamTargetPos = new Vector2(transform.position.x, -1f);
             Vector2 playerTarget = new Vector2(player.position.x, transform.position.y);
 
-            //Addig megy oldalra, amig elnem eri a jatekos x erteket
+            //Addig megy oldalra a koponya, amíg a játékos és a koponya távolsága nem lesz kisebb vagy egyenlõ 0.05-tel
             while (Vector2.Distance(playerTarget, transform.position) > 0.05f)
             {
                 playerTarget = new Vector2(player.position.x, transform.position.y);
                 transform.position = Vector2.MoveTowards(transform.position, playerTarget, sideSpeed * Time.deltaTime);
                 yield return null;
             }
-            startPosition = transform.position;
+            Vector2 riseUpTarget = new Vector2(transform.position.x, startPosition.y); ;
             animator.Play("Skull_OpenMouth");
             yield return new WaitForSeconds(timeForSlam);
 
@@ -53,17 +53,17 @@ public class SkullBossAttack : MonoBehaviour
             
             while (Vector2.Distance(transform.position, slamTargetPos) > 0.05f)
             {
-                slamTargetPos = new Vector2(transform.position.x, -1.5f);
+                slamTargetPos = new Vector2(transform.position.x, -1f);
                 transform.position = Vector2.MoveTowards(transform.position, slamTargetPos, slamSpeed * Time.deltaTime);
                 yield return null;
             }
             yield return new WaitForSeconds(1.1f);
 
             //Felemelkedik az eredeti magasságba
-            while (Vector2.Distance(transform.position, startPosition) > 0.05f)
+            while (Vector2.Distance(transform.position, riseUpTarget) > 0.05f)
             {
                 animator.Play("Skull_CloseMouth");
-                transform.position = Vector2.MoveTowards(transform.position,startPosition,riseSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position,riseUpTarget,riseSpeed * Time.deltaTime);
                 yield return null;
             } 
             
@@ -117,12 +117,19 @@ public class SkullBossAttack : MonoBehaviour
         }
 
         animator.Play("Skull_OpenMouth");
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
         ShootTeeth();
         yield return new WaitForSeconds(1f);
         animator.Play("Skull_CloseMouth");
+        yield return new WaitForSeconds(1f);
 
-        transform.rotation = Quaternion.identity;
+        Quaternion resetRotation = Quaternion.identity;
+        while (Quaternion.Angle(transform.rotation, resetRotation) > 1f)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, resetRotation, 360f * Time.deltaTime);
+            yield return null;
+        }
+
     }
 
     void ShootTeeth()
@@ -131,8 +138,8 @@ public class SkullBossAttack : MonoBehaviour
 
         Vector2[] directions = {
         dirToPlayer,
-        Rotate(dirToPlayer, 30f),
-        Rotate(dirToPlayer, -30f)
+        Rotate(dirToPlayer, 24f),
+        Rotate(dirToPlayer, -24f)
     };
 
         foreach (Vector2 dir in directions)

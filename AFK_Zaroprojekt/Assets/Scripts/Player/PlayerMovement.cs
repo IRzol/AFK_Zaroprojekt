@@ -118,19 +118,17 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.gameObject.tag == "Damage")
+        if (other.CompareTag("Damage"))
         {
             health -= 16.666666666666666666666666666667f;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce-2f);
             StartCoroutine(BlinkRed());
-
-            if(health <= 0f)
+            if (health <= 0f)
             {
                 Die();
             }
-
         }
     }
 
