@@ -67,7 +67,7 @@ public class SkullBossAttack : MonoBehaviour
                 yield return null;
             } 
             
-            sideSpeed += 0.03f;
+            sideSpeed += 0.04f;
             if(timeForSlam >= 0.2) 
             { 
                 timeForSlam -= 0.05f;

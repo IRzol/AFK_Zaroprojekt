@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,8 +34,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float maxHealth;
     public Image healthBar;
+    public Image damageBar;
+    private float damaageBarTimer;
     public float maxStamina;
     public Image staminaBar;
+    public Image staminaDownBar;
+    private float staminaBarTimer;
+    public TMP_Text healthText;
+    public TMP_Text staminaText;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
 
         maxHealth = health;
         maxStamina = stamina;
+        healthBar.fillAmount = 1f;
+        damageBar.fillAmount = 1f;
+        staminaDownBar.fillAmount = 1f;
     }
 
     void Update()
@@ -53,11 +64,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if (stamina <= 0)
             {
-                moveInput = moveInput / 2;
+                moveSpeed = 2f;
                 jumpForce = 7f;
                 dashingPower = 7f;
             }
+            else
+            {
+                moveSpeed = 5f;
+                jumpForce = 12f;
+                dashingPower = 20f;
+            }
 
+            healthText.text = Mathf.RoundToInt(health) + "/" + Mathf.RoundToInt(maxHealth);
+            staminaText.text = Mathf.RoundToInt(stamina) + "/" + Mathf.RoundToInt(maxStamina);
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -86,9 +105,21 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        if (healthBar != null)
+        if (healthBar != null && damageBar != null)
         {
-            healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+            //Azonnali HP bar
+            healthBar.fillAmount = health / maxHealth;
+
+            //Várakozás sebzõdés után
+            if (damaageBarTimer > 0)
+            {
+                damaageBarTimer -= Time.deltaTime;
+            }
+            else
+            {
+                //Késleltetett HP bar
+                damageBar.fillAmount = Mathf.Lerp(damageBar.fillAmount,healthBar.fillAmount,2f * Time.deltaTime);
+            }
         }
     }
 
@@ -103,27 +134,38 @@ public class PlayerMovement : MonoBehaviour
                     stamina -= 25f * Time.deltaTime;
                     regenTimer = 0f;
                 }
+
                 if (moveInput != 0)
                 {
                     stamina -= 12f * Time.deltaTime;
                     regenTimer = 0f;
                 }
-                
-            }
-            if (moveInput < 0.1 && moveInput > -0.1)
-            {
-                regenTimer += 1 * Time.deltaTime;
-            }
-            if (regenTimer >= 1.2f)
-            {
-                stamina += 20f * Time.deltaTime; // regen
             }
 
+            if (moveInput < 0.1f && moveInput > -0.1f)
+            {
+                regenTimer += Time.deltaTime;
+            }
 
-            staminaBar.fillAmount = Mathf.Clamp(stamina / maxStamina, 0, 1);
+            if (regenTimer >= 1f && stamina < maxStamina)
+            {
+                stamina += 30f * Time.deltaTime;
+            }
+
+            stamina = Mathf.Clamp(stamina, 0, maxStamina);
+
+            // Azonnali stamina sáv
+            staminaBar.fillAmount = stamina / maxStamina;
+
+            // Késleltetett stamina sáv
+            staminaDownBar.fillAmount = Mathf.Lerp(
+                staminaDownBar.fillAmount,
+                staminaBar.fillAmount,
+                4f * Time.deltaTime
+            );
         }
     }
-    
+
 
     private void FixedUpdate()
     {
@@ -179,6 +221,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Damage"))
         {
             health -= 16.666666666666666666666666666667f;
+            damaageBarTimer = 0.5f;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce-2f);
             StartCoroutine(BlinkRed());
             if (health <= 2f)
