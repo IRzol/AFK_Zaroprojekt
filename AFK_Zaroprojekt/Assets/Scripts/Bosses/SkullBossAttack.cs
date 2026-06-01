@@ -51,8 +51,15 @@ public class SkullBossAttack : MonoBehaviour
                 yield return null;
             }
             Vector2 riseUpTarget = new Vector2(transform.position.x, startPosition.y); ;
-            animator.Play("Skull_OpenMouth");
-            animatorIcon.Play("Skull_OpenMouthIcon");
+            if (animator != null)
+            {
+                animator.Play("Skull_OpenMouth");
+            }
+
+            if (animatorIcon != null)
+            {
+                animatorIcon.Play("Skull_OpenMouthIcon");
+            }
             yield return new WaitForSeconds(timeForSlam);
 
             //Lecsapódik
@@ -68,8 +75,14 @@ public class SkullBossAttack : MonoBehaviour
             //Felemelkedik az eredeti magasságba
             while (Vector2.Distance(transform.position, riseUpTarget) > 0.05f)
             {
-                animator.Play("Skull_CloseMouth");
-                animatorIcon.Play("Skull_CloseMouthIcon");
+                if (animator != null)
+                {
+                    animator.Play("Skull_CloseMouth");
+                }
+                if (animatorIcon != null)
+                {
+                    animatorIcon.Play("Skull_CloseMouthIcon");
+                }
                 transform.position = Vector2.MoveTowards(transform.position,riseUpTarget,riseSpeed * Time.deltaTime);
                 yield return null;
             } 
@@ -123,13 +136,25 @@ public class SkullBossAttack : MonoBehaviour
             yield return null;
         }
 
-        animator.Play("Skull_OpenMouth");
-        animatorIcon.Play("Skull_OpenMouthIcon");
+        if (animator != null)
+        {
+            animator.Play("Skull_OpenMouth");
+        }
+        if (animatorIcon != null)
+        {
+            animatorIcon.Play("Skull_OpenMouthIcon");
+        }
         yield return new WaitForSeconds(1f);
         ShootTeeth();
         yield return new WaitForSeconds(1f);
-        animator.Play("Skull_CloseMouth");
-        animatorIcon.Play("Skull_CloseMouthIcon");
+        if (animator != null)
+        {
+            animator.Play("Skull_CloseMouth");
+        }
+        if (animatorIcon != null)
+        {
+            animatorIcon.Play("Skull_CloseMouthIcon");
+        }
         yield return new WaitForSeconds(1f);
 
         Quaternion resetRotation = Quaternion.identity;
@@ -165,5 +190,10 @@ public class SkullBossAttack : MonoBehaviour
             v.x * Mathf.Cos(rad) - v.y * Mathf.Sin(rad),
             v.x * Mathf.Sin(rad) + v.y * Mathf.Cos(rad)
         );
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 }

@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text staminaText;
 
+    public GameObject sweating;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -55,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
         healthBar.fillAmount = 1f;
         damageBar.fillAmount = 1f;
         staminaDownBar.fillAmount = 1f;
+
+        sweating.SetActive(false);
     }
 
     void Update()
@@ -67,12 +71,14 @@ public class PlayerMovement : MonoBehaviour
                 moveSpeed = 2f;
                 jumpForce = 7f;
                 dashingPower = 7f;
+                sweating.SetActive(true);
             }
             else
             {
                 moveSpeed = 5f;
                 jumpForce = 12f;
                 dashingPower = 20f;
+                sweating.SetActive(false);
             }
 
             healthText.text = Mathf.RoundToInt(health) + "/" + Mathf.RoundToInt(maxHealth);

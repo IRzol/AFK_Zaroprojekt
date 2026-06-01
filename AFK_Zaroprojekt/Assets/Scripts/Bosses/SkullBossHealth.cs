@@ -1,7 +1,9 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using Unity.Cinemachine;
 
 public class SkullBossHealth : MonoBehaviour
 {
@@ -14,6 +16,13 @@ public class SkullBossHealth : MonoBehaviour
     private float barTimer;
     public GameObject bossHealthUI;
     private SpriteRenderer spriteRenderer;
+
+    public GameObject doorHitbox;
+    public Animator doorAnimator;
+    public CinemachineCamera staticCamBossArena;
+    public CinemachineCamera followCam;
+    public Animator skullAnimator;
+    private bool dead = false;
 
     void Start()
     {
@@ -28,6 +37,8 @@ public class SkullBossHealth : MonoBehaviour
 
     void Update()
     {
+        if (dead) return;
+
         if (healthBar != null && damageBar != null)
         {
             //Azonnali HP bar
@@ -47,20 +58,27 @@ public class SkullBossHealth : MonoBehaviour
 
        
         healthText.text = Mathf.RoundToInt(health) + "/" + Mathf.RoundToInt(maxHealth);
+
+        if (health <= 0)
+        {
+            StartCoroutine(Die());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (dead) return;
+
         if (other.CompareTag("DamageToBoss"))
         {   
             health -= 16.6667f;
             health = Mathf.Clamp(health, 0, maxHealth);
             barTimer = 0.5f;
             StartCoroutine(BlinkRed());
-            if (health <= 0)
-            {
-                Die();
-            }
+            //if (health <= 0)
+            //{
+            //    Die();
+            //}
         }
     }
 
@@ -71,9 +89,24 @@ public class SkullBossHealth : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
+        SkullBossAttack attack = GetComponent<SkullBossAttack>();
+        if (attack != null)
+        {
+            attack.isAlive = false;
+            attack.StopAllCoroutines();
+            skullAnimator.Play("SkullBoss_Burn");
+            yield return new WaitForSeconds(0.5f);
+            attack.enabled = false;
+            yield return new WaitForSeconds(1.5f);
+        }
+        followCam.Priority = 10;
+        staticCamBossArena.Priority = 0;
         bossHealthUI.SetActive(false);
+        doorHitbox.GetComponent<TilemapCollider2D>().enabled = false;
+        doorAnimator.SetBool("IsOpen", true);
         Destroy(gameObject);
     }
+
 }
