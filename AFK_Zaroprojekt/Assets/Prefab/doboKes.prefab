@@ -10,11 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: 1018fb02388e96442a98373f0a8d1105, type: 3}
       propertyPath: m_Name
-      value: Sprite-0001
+      value: doboKes
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 1018fb02388e96442a98373f0a8d1105, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 1018fb02388e96442a98373f0a8d1105, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 1018fb02388e96442a98373f0a8d1105, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1774213943
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 1018fb02388e96442a98373f0a8d1105, type: 3}
       propertyPath: m_LocalPosition.x
@@ -121,3 +129,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FegyverPickup
   fegyverPrefab: {fileID: 5539961683542585457}
+  bulletPrefab: {fileID: 5539961683542585457}

@@ -111,8 +111,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1774213943
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8200246906327157222, guid: d980fa8c141b7c147b4a32e9c07bf916, type: 3}
@@ -174,3 +174,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FegyverPickup
   fegyverPrefab: {fileID: 6774488093688678600}
+  bulletPrefab: {fileID: 8340696220571306052, guid: 3415dc10589cbe549a85bb5d9e93717f, type: 3}
