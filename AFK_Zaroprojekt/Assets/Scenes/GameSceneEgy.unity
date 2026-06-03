@@ -1797,6 +1797,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208853780}
   m_CullTransparentMesh: 1
+--- !u!1 &251392649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 251392651}
+  - component: {fileID: 251392650}
+  m_Layer: 0
+  m_Name: FegyverSpawner1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &251392650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251392649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336e55b9e0e03f44bb80dbfbbd15101a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
+  fegyverPrefabok:
+  - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
+  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
+  - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  minSpawnIdo: 3
+  maxSpawnIdo: 8
+--- !u!4 &251392651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251392649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 56.02, y: -1.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &271971052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2495,57 @@ MonoBehaviour:
   staticCamBossArena: {fileID: 577244897}
   followCam: {fileID: 1704490118}
   skullAnimator: {fileID: 338840310}
+--- !u!1 &348517152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348517154}
+  - component: {fileID: 348517153}
+  m_Layer: 0
+  m_Name: FegyverSpawner1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &348517153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348517152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336e55b9e0e03f44bb80dbfbbd15101a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
+  fegyverPrefabok:
+  - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
+  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
+  - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  minSpawnIdo: 3
+  maxSpawnIdo: 8
+--- !u!4 &348517154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348517152}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 49.97, y: -2.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &376983696
 GameObject:
   m_ObjectHideFlags: 0
@@ -7770,6 +7872,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824083895}
   m_CullTransparentMesh: 1
+--- !u!1 &863876639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 863876641}
+  - component: {fileID: 863876640}
+  m_Layer: 0
+  m_Name: FegyverSpawner1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &863876640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863876639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336e55b9e0e03f44bb80dbfbbd15101a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
+  fegyverPrefabok:
+  - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
+  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
+  - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  minSpawnIdo: 3
+  maxSpawnIdo: 8
+--- !u!4 &863876641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863876639}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.52, y: -1.94, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874249670
 GameObject:
   m_ObjectHideFlags: 0
@@ -12047,7 +12200,7 @@ Transform:
   m_GameObject: {fileID: 1078286299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.52, y: -1, z: -1}
+  m_LocalPosition: {x: 19.5, y: 1.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16013,6 +16166,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1699574714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699574716}
+  - component: {fileID: 1699574715}
+  m_Layer: 0
+  m_Name: FegyverSpawner1 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1699574715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699574714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336e55b9e0e03f44bb80dbfbbd15101a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
+  fegyverPrefabok:
+  - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
+  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
+  - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  minSpawnIdo: 3
+  maxSpawnIdo: 8
+--- !u!4 &1699574716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699574714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 49.97, y: -2.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1704490117
 GameObject:
   m_ObjectHideFlags: 0
@@ -18214,5 +18418,9 @@ SceneRoots:
   - {fileID: 937675918}
   - {fileID: 1289556377}
   - {fileID: 271971053}
+  - {fileID: 863876641}
+  - {fileID: 348517154}
+  - {fileID: 1699574716}
+  - {fileID: 251392651}
   - {fileID: 1967102316}
   - {fileID: 1661946183}
