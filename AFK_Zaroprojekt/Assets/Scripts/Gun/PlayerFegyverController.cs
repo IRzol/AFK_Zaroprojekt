@@ -14,6 +14,9 @@ public class PlayerFegyverController : MonoBehaviour
                         fegyverTartoPont.rotation);
         felvetFegyver.transform.SetParent(fegyverTartoPont);
 
+        felvetFegyver.transform.SetParent(fegyverTartoPont);
+        felvetFegyver.transform.localScale = Vector3.one;
+
         Rigidbody2D rb = felvetFegyver.GetComponent<Rigidbody2D>();
         if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
 
