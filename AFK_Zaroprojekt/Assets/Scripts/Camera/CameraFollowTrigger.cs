@@ -1,19 +1,20 @@
-using Unity.Cinemachine;
 using UnityEngine;
+using Unity.Cinemachine;
 
 public class CameraFollowTrigger : MonoBehaviour
 {
-    public CinemachineCamera staticCam;
+    public CinemachineCamera staticCamBossArena;
     public CinemachineCamera followCam;
     private bool triggered = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (triggered) return;
+
         if (other.CompareTag("Player"))
         {
-            staticCam.Priority = 0;  // static loses control
-            followCam.Priority = 10; // follow takes over
+            if (staticCamBossArena != null) staticCamBossArena.Priority = 0;
+            if (followCam != null) followCam.Priority = 10;
             triggered = true;
         }
     }
