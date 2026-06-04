@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class Sahur : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Sahur : MonoBehaviour
     private float attackTimer;
     private Rigidbody2D rb;
     private bool isDead = false;
+    public GameObject sahurHP;
+    public TMP_Text healthText;
 
     void Start()
     {
@@ -43,9 +46,22 @@ public class Sahur : MonoBehaviour
 
         float distToPlayer = Vector2.Distance(transform.position, player.position);
 
+        // HP UI megjelenítés
+        if (distToPlayer <= 8f)
+        {
+            sahurHP.SetActive(true);
+        }
+        else
+        {
+            sahurHP.SetActive(false);
+        }
+
+        // HP text
+        healthText.text = Mathf.RoundToInt(currentHealth) + "/" + Mathf.RoundToInt(maxHealth);
+
         if (distToPlayer <= attackRange)
         {
-            rb.linearVelocity = Vector2.zero;
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
             if (attackTimer >= attackCooldown)
             {
