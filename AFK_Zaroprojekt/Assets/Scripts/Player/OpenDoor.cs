@@ -11,6 +11,11 @@ public class OpenDoor : MonoBehaviour
     private bool opened = false;
     public Transform interactPoint;
 
+    void Start()
+    {
+        eButton.SetActive(true);
+    }
+
     void Update()
     {
         if (opened)
@@ -20,6 +25,10 @@ public class OpenDoor : MonoBehaviour
         }
 
         float distance1 = Vector2.Distance(interactPoint.position, player.position);
+        Debug.Log("Player: " + player.position);
+        Debug.Log("Interact: " + interactPoint.position);
+        Debug.Log("Distance: " + distance1);
+        Debug.Log(gameObject.name + " -> " + interactPoint.name);
         bool inRange = distance1 <= interactRange;
 
         eButton.SetActive(inRange);
@@ -31,4 +40,6 @@ public class OpenDoor : MonoBehaviour
             opened = true;
         }
     }
+
+
 }

@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     public GameObject menuPanel;
     public GameObject healthBar;
     public GameObject staminaBar;
+    public GameObject weaponIcon;
     public bool gameStarted = false;
 
 
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     {
         healthBar.SetActive(false);
         staminaBar.SetActive(false);
+        weaponIcon.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
         menuPanel.SetActive(false);
         healthBar.SetActive(true);
         staminaBar.SetActive(true);
+        weaponIcon.SetActive(true);
         gameStarted = true;
         Time.timeScale = 1f;
     }
