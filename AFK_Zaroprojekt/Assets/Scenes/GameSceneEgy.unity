@@ -1822,9 +1822,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
   fegyverPrefabok:
   - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
-  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
-  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   minSpawnIdo: 3
   maxSpawnIdo: 8
 --- !u!4 &251392651
@@ -2025,9 +2024,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
   fegyverPrefabok:
   - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
-  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
-  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   minSpawnIdo: 3
   maxSpawnIdo: 8
 --- !u!1 &273711754
@@ -2528,9 +2526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
   fegyverPrefabok:
   - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
-  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
-  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   minSpawnIdo: 3
   maxSpawnIdo: 8
 --- !u!4 &348517154
@@ -7929,9 +7926,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
   fegyverPrefabok:
   - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
-  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
-  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   minSpawnIdo: 3
   maxSpawnIdo: 8
 --- !u!4 &863876641
@@ -16173,9 +16169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
   fegyverPrefabok:
   - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
-  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
-  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   minSpawnIdo: 5
   maxSpawnIdo: 15
 --- !u!4 &1661946183
@@ -18160,9 +18155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
   fegyverPrefabok:
   - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
-  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
-  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
+  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
   minSpawnIdo: 5
   maxSpawnIdo: 15
 --- !u!4 &1967102316
