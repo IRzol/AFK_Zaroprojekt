@@ -7810,6 +7810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   menuPanel: {fileID: 824205939}
+  healthBar: {fileID: 2066771627}
+  staminaBar: {fileID: 2034383009}
   gameStarted: 0
 --- !u!114 &824205942
 MonoBehaviour:
@@ -18064,7 +18066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3efcfd4196479b64e8ac6693ee84f3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollowTrigger
-  staticCamBossArena: {fileID: 0}
+  staticCamBossArena: {fileID: 1742605992}
   followCam: {fileID: 1704490118}
 --- !u!61 &1946261732
 BoxCollider2D:
@@ -18615,9 +18617,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 703764949850062580, guid: 31fd489542b4bf448b5f3d0dd761dd03, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 2066771627}
+    - target: {fileID: 703764949850062580, guid: 31fd489542b4bf448b5f3d0dd761dd03, type: 3}
       propertyPath: menuPanel
       value: 
       objectReference: {fileID: 824205939}
+    - target: {fileID: 703764949850062580, guid: 31fd489542b4bf448b5f3d0dd761dd03, type: 3}
+      propertyPath: staminaBar
+      value: 
+      objectReference: {fileID: 2034383009}
     - target: {fileID: 4495446146050642857, guid: 31fd489542b4bf448b5f3d0dd761dd03, type: 3}
       propertyPath: m_Name
       value: GameManager

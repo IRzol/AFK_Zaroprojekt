@@ -47,6 +47,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("healthBar: " + healthBar);
+        Debug.Log("healthText: " + healthText);
+        Debug.Log("staminaBar: " + staminaBar);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
