@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 
     public bool gameStarted = false;
 
+
     void Start()
     {
         Time.timeScale = 0f;
