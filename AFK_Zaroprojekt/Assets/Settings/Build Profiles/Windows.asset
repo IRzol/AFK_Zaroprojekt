@@ -20,7 +20,7 @@ MonoBehaviour:
     rid: 3638613213828088075
   m_OverrideGlobalSceneList: 1
   m_Scenes:
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: Assets/Scenes/menu.unity
     m_guid: afc8ecaa6252ace4ab9ace529fec94cf
   - m_enabled: 1
