@@ -14905,6 +14905,8 @@ MonoBehaviour:
   attackRange: 1.5
   attackCooldown: 1.5
   player: {fileID: 96077699}
+  sahurHP: {fileID: 1811370493}
+  healthText: {fileID: 928936230}
 --- !u!1 &1306576356
 GameObject:
   m_ObjectHideFlags: 0
