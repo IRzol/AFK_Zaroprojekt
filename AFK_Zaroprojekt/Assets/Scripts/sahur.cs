@@ -26,7 +26,11 @@ public class Sahur : MonoBehaviour
         if (player == null)
         {
             var p = GameObject.FindGameObjectWithTag("Player");
-            if (p != null) player = p.transform;
+
+            if (p != null)
+            {
+                player = p.transform;
+            }
         }
     }
 
@@ -41,8 +45,7 @@ public class Sahur : MonoBehaviour
 
         if (distToPlayer <= attackRange)
         {
-            // Támadótávolságon belül - üt
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            rb.linearVelocity = Vector2.zero;
 
             if (attackTimer >= attackCooldown)
             {
@@ -52,16 +55,25 @@ public class Sahur : MonoBehaviour
         }
         else
         {
-            // Player felé sétál
             int dir = (player.position.x > transform.position.x) ? 1 : -1;
+
             rb.linearVelocity = new Vector2(dir * moveSpeed, rb.linearVelocity.y);
+
             FaceDirection(dir);
         }
     }
 
     void Attack()
     {
-        var playerHealth = player.GetComponent<PlayerHealth>();
+        if (player == null) return;
+
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+
+        if (playerHealth == null)
+        {
+            playerHealth = player.GetComponentInChildren<PlayerHealth>();
+        }
+
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(attackDamage);
@@ -72,25 +84,34 @@ public class Sahur : MonoBehaviour
     public void TakeDamage(float amount)
     {
         if (isDead) return;
+
         currentHealth -= amount;
+
         Debug.Log($"Sahur HP: {currentHealth}/{maxHealth}");
 
-        if (currentHealth <= 0f) Die();
+        if (currentHealth <= 0f)
+        {
+            Die();
+        }
     }
 
     void Die()
     {
         isDead = true;
+
         rb.linearVelocity = Vector2.zero;
+
         Debug.Log("Sahur defeated!");
+
         GetComponent<Collider2D>().enabled = false;
+
         Destroy(gameObject, 1f);
     }
 
     void FaceDirection(int dir)
     {
         Vector3 scale = transform.localScale;
-        scale.x = Mathf.Abs(scale.x) * dir;
+        scale.x = Mathf.Abs(scale.x) * -dir;
         transform.localScale = scale;
     }
 
