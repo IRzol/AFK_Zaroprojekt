@@ -21,13 +21,10 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/menu.unity
+    m_path: Assets/Scenes/menu.unity
     m_guid: afc8ecaa6252ace4ab9ace529fec94cf
   - m_enabled: 1
-    m_path: Assets/Scenes/ElsoScene.unity
-    m_guid: 8c9cfa26abfee488c85f1582747f6a02
-  - m_enabled: 1
-    m_path: Assets/Scenes/inputoldteszt.unity
+    m_path: Assets/Scenes/GameSceneEgy.unity
     m_guid: f79db1ca664d15d469df25141a34b5cd
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []

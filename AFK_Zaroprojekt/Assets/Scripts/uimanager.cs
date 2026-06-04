@@ -8,11 +8,14 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-
         if (gameManager == null || settingsPanel == null)
             return;
 
         if (!gameManager.gameStarted)
+            return;
+
+        // Game over alatt ne nyíljon meg a settings
+        if (gameManager.isGameOver)
             return;
 
         if (Input.GetKeyDown(KeyCode.Escape))

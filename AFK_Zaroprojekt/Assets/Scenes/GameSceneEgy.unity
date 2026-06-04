@@ -1344,6 +1344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fe7d6769a240d41ac9a5d1e14485ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  menuPanel: {fileID: 0}
+  gameStarted: 0
 --- !u!114 &130541350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,7 +1722,7 @@ MonoBehaviour:
   m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1c0de24eac541541b7cb1ce24cc530f, type: 2}
-  m_sharedMaterial: {fileID: 5916687171132821149, guid: 9c1c64af17e26344a83fb4e9ae8f5883, type: 2}
+  m_sharedMaterial: {fileID: 103145344111451268, guid: c1c0de24eac541541b7cb1ce24cc530f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2074,7 +2076,7 @@ MonoBehaviour:
   m_text: music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1c0de24eac541541b7cb1ce24cc530f, type: 2}
-  m_sharedMaterial: {fileID: 5916687171132821149, guid: 9c1c64af17e26344a83fb4e9ae8f5883, type: 2}
+  m_sharedMaterial: {fileID: 103145344111451268, guid: c1c0de24eac541541b7cb1ce24cc530f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7621,7 +7623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166be73a4041edf4198dec52487efd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  settingsPanel: {fileID: 0}
+  settingsPanel: {fileID: 195832122}
+  gameManager: {fileID: 1699574715}
 --- !u!4 &799942520
 Transform:
   m_ObjectHideFlags: 0
@@ -12200,7 +12203,7 @@ Transform:
   m_GameObject: {fileID: 1078286299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.5, y: 1.3, z: -1}
+  m_LocalPosition: {x: -1.52, y: -1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15563,7 +15566,7 @@ MonoBehaviour:
   m_text: sound
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1c0de24eac541541b7cb1ce24cc530f, type: 2}
-  m_sharedMaterial: {fileID: 5916687171132821149, guid: 9c1c64af17e26344a83fb4e9ae8f5883, type: 2}
+  m_sharedMaterial: {fileID: 103145344111451268, guid: c1c0de24eac541541b7cb1ce24cc530f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16167,7 +16170,6 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662315222
---- !u!1 &1699574714
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16175,14 +16177,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1662315224}
-  - component: {fileID: 1662315223}
-  m_Layer: 0
-  m_Name: HatterZene
   - component: {fileID: 1699574716}
   - component: {fileID: 1699574715}
   m_Layer: 0
-  m_Name: FegyverSpawner1 (4)
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16190,31 +16188,29 @@ GameObject:
   m_IsActive: 1
 --- !u!82 &1662315223
 AudioSource:
---- !u!114 &1699574715
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662315222}
+  m_GameObject: {fileID: 1699574714}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1958480455292868991, guid: 72358b8d0350d6542b77f2b9a82b7aed, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 6bc118398f10d5c4b8f4ef20e37d4223, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.7529297
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -16223,7 +16219,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1e-45
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16231,8 +16227,125 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0
+      time: 0.1
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.6
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 3.2
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 6.4
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 12.8
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 25.6
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 51.2
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 102.4
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 204.8
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 409.6
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 500
+      value: 1e-45
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16288,19 +16401,51 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!4 &1662315224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699574714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1699574714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662315224}
+  - component: {fileID: 1662315223}
+  m_Layer: 0
+  m_Name: HatterZene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1699574715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662315222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336e55b9e0e03f44bb80dbfbbd15101a, type: 3}
+  m_Script: {fileID: 11500000, guid: 86fe7d6769a240d41ac9a5d1e14485ea, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FegyverSpawner
-  fegyverPrefabok:
-  - {fileID: 2362933401142047793, guid: 8c1ecb69051a65b49b648bbfde19d961, type: 3}
-  - {fileID: 5539961683542585457, guid: ab97945b8fa07124489676077db43024, type: 3}
-  - {fileID: 6774488093688678600, guid: 2af39ca23594174428686926cbc2e0c8, type: 3}
-  - {fileID: 3479423132494325804, guid: 727be496afcadbf4d84b28998ef68adb, type: 3}
-  minSpawnIdo: 3
-  maxSpawnIdo: 8
+  m_EditorClassIdentifier: 
+  menuPanel: {fileID: 130541347}
+  gameStarted: 0
 --- !u!4 &1699574716
 Transform:
   m_ObjectHideFlags: 0
@@ -16311,10 +16456,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 551, y: 304, z: 0}
-  m_GameObject: {fileID: 1699574714}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.97, y: -2.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
